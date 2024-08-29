@@ -1,10 +1,5 @@
-WPF C# 4.0 Image Magnifier
+WPF C# .net6.0 Image Magnifier with MVVM Pattern
 
 Includes zoom in, zoom out, rotate, fit to width
 
 Any image, custom magnifier size
-
-
-Any comments to
-franciscocostacampos@gmail.com
-www.FranciscoCampos.com
