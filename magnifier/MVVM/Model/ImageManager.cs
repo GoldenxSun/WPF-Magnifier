@@ -21,8 +21,8 @@ namespace magnifier
         private readonly ObservableCollection<ImageSource>? _pictures;
         private readonly Dictionary<ImageSource, string>? _pictureDescriptions;
 
-        private Point _start;
-        private Point _origin;
+        private static Point _start;
+        private static Point _origin;
 
         public ImageManager()
         {
@@ -155,14 +155,14 @@ namespace magnifier
             rt.CenterY = 100;
         }
 
-        public void MouseDown(Canvas imgCanvas, Image imgObject, TranslateTransform tt, MouseButtonEventArgs e)
+        public static void MouseDown(Canvas imgCanvas, Image imgObject, TranslateTransform tt, MouseButtonEventArgs e)
         {
             imgObject.CaptureMouse();
             _start = e.GetPosition(imgCanvas);
             _origin = new Point(tt.X, tt.Y);
         }
 
-        public void MouseMove(Canvas imgCanvas, Image imgObject, TranslateTransform tt, MouseEventArgs e)
+        public static void MouseMove(Canvas imgCanvas, Image imgObject, TranslateTransform tt, MouseEventArgs e)
         {
             if (!imgObject.IsMouseCaptured) return;
 
@@ -171,7 +171,7 @@ namespace magnifier
             tt.Y = _origin.Y - v.Y;
         }
 
-        public void MouseMoveMagnifier(Canvas imgCanvas, Image imgObject, Canvas imgCanvasMagnifier, Image imgMagnifier, MouseEventArgs e)
+        public static void MouseMoveMagnifier(Canvas imgCanvas, Image imgObject, Canvas imgCanvasMagnifier, Image imgMagnifier, MouseEventArgs e)
         {
             Magnifier(imgCanvas, imgObject, imgCanvasMagnifier, imgMagnifier, e);
 
@@ -182,7 +182,7 @@ namespace magnifier
             tt.Y = _origin.Y - v.Y;
         }
 
-        public void MouseUp(Image imgObject, MouseButtonEventArgs e)
+        public static void MouseUp(Image imgObject, MouseButtonEventArgs e)
         {
             imgObject.ReleaseMouseCapture();
         }
@@ -220,7 +220,7 @@ namespace magnifier
             }
         }
 
-        public void Magnifier(Canvas imgCanvas, Image imgObject, Canvas imgCanvasMagnifier, Image imgMagnifier, MouseEventArgs e)
+        public static void Magnifier(Canvas imgCanvas, Image imgObject, Canvas imgCanvasMagnifier, Image imgMagnifier, MouseEventArgs e)
         {
             Double width = imgCanvasMagnifier.Width;
             Double height = imgCanvasMagnifier.Height;

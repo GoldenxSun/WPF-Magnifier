@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows;
+using System.Windows.Controls;
+using System.Diagnostics;
 
 namespace magnifier.MVVM.ViewModel
 {
@@ -39,20 +41,26 @@ namespace magnifier.MVVM.ViewModel
             _currentPictureIndex = 0;
             UpdateCurrentPicture();
 
-            NextPicture = new DelegateCommand(o =>
+            NextPicture = new DelegateCommand<object>(o =>
             {
                 ExecuteNextPicture();
             });
 
-            PrevPicture = new DelegateCommand(o =>
+            PrevPicture = new DelegateCommand<object>(o =>
             {
                 ExecutePrevPicture();
             });
+
+            Title = "Picture Magnifier";
         }
 
         public override void UpdateProperties()
         {
-            Title = "Pictures Title";
+            if (_pictures!.Count > 0)
+            {
+                CurrentPicture = _pictures[(int)_currentPictureIndex!];
+                CurrentDescription = _pictureDescriptions![CurrentPicture];
+            }
         }
 
         private void UpdateCurrentPicture()
@@ -61,6 +69,10 @@ namespace magnifier.MVVM.ViewModel
             {
                 CurrentPicture = _pictures[(int)_currentPictureIndex!];
                 CurrentDescription = _pictureDescriptions![CurrentPicture];
+            }
+            else
+            {
+                Debug.WriteLine(_pictures!.Count);
             }
         }
 
@@ -76,6 +88,7 @@ namespace magnifier.MVVM.ViewModel
             }
 
             UpdateCurrentPicture();
+            UpdateProperties();
         }
 
         private bool CanExecuteNextPicture()

@@ -4,7 +4,7 @@
         xmlns:vm="clr-namespace:magnifier.MVVM.ViewModel"
         xmlns:v="clr-namespace:magnifier.MVVM.View"
         Title="Mangifier Project" 
-        Height="400" 
+        Height="520" 
         Width="800" >
 
     <Window.DataContext>
@@ -19,8 +19,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="450"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0"

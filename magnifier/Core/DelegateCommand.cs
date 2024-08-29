@@ -7,25 +7,25 @@ using System.Windows.Input;
 
 namespace magnifier.Core
 {
-    internal class DelegateCommand : ICommand
+    internal class DelegateCommand<T> : ICommand
     {
-        readonly Action<object>? _execute;
-        readonly Predicate<object>? _canExecute;
+        readonly Action<T>? _execute;
+        readonly Predicate<T>? _canExecute;
 
-        public DelegateCommand(Predicate<object>? canExecute, Action<object>? execute)
+        public DelegateCommand(Predicate<T>? canExecute, Action<T>? execute)
         {
             this._canExecute = canExecute;
             this._execute = execute;
         }
 
-        public DelegateCommand(Action<object> execute) : this(null, execute) { }
+        public DelegateCommand(Action<T> execute) : this(null, execute) { }
 
         public event EventHandler? CanExecuteChanged;
 
         public void RaiseCanExecuteChanged() => this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
-        public bool CanExecute(object? parameter) => this._canExecute?.Invoke(parameter!) ?? true;
+        public bool CanExecute(object? parameter) => this._canExecute?.Invoke((T)parameter!) ?? true;
 
-        public void Execute(object? parameter) => this._execute?.Invoke(parameter!);
+        public void Execute(object? parameter) => this._execute?.Invoke((T)parameter!);
     }
 }

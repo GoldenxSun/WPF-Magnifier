@@ -14,12 +14,6 @@
     <None Remove="Images\3D Pictures\02 PC mouse.jpg" />
     <None Remove="Images\3D Pictures\03 Iron.jpg" />
     <None Remove="Images\3D Pictures\04 PCB with SMD and BGA.jpg" />
-    <None Remove="Images\3D Pictures\05 Mobile Keyboard.jpg" />
-    <None Remove="Images\3D Pictures\06 Lamp Complete.jpg" />
-    <None Remove="Images\3D Pictures\07 Bulletporof vest with shots.jpg" />
-    <None Remove="Images\3D Pictures\08 Pipe.jpg" />
-    <None Remove="Images\3D Pictures\09 Al-Part with shrinkage.jpg" />
-    <None Remove="Images\3D Pictures\10 Al-Part with shrinkage %28ED%29.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,24 +30,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\3D Pictures\04 PCB with SMD and BGA.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\3D Pictures\05 Mobile Keyboard.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\3D Pictures\06 Lamp Complete.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\3D Pictures\07 Bulletporof vest with shots.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\3D Pictures\08 Pipe.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\3D Pictures\09 Al-Part with shrinkage.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\3D Pictures\10 Al-Part with shrinkage (ED).jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
